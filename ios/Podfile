@@ -1,12 +1,19 @@
-platform :ios, '15.5'
+platform :ios, '12.0'
 
-# Flutter'ın podları yüklemesi için gerekli
+# Comment the next line if you don't want to use dynamic frameworks
+use_frameworks!
+
+# Prepare Flutter environment
+install! 'cocoapods', :deterministic_uuids => false
 flutter_root = File.expand_path('..', File.dirname(__FILE__))
-load File.join(flutter_root, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
+require File.join(flutter_root, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
 
 target 'Runner' do
-  use_frameworks!
-  use_modular_headers!
+  install_all_flutter_pods(flutter_root)
+end
 
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
 end
