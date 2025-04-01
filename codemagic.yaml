@@ -15,7 +15,6 @@ workflows:
         script: flutter pub get
       - name: Install CocoaPods
         script: |
-          # Yükleme işlemi
           gem install cocoapods # CocoaPods yükleme işlemi
           cd ios
           pod install # Bağımlılıkları yükle
