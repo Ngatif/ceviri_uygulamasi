@@ -1,0 +1,12 @@
+platform :ios, '15.5'
+
+# Flutter'ın podları yüklemesi için gerekli
+flutter_root = File.expand_path('..', File.dirname(__FILE__))
+load File.join(flutter_root, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
