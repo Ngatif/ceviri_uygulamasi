@@ -2,15 +2,15 @@ platform :ios, '15.0'  # '15.5' yerine 15.0 kullanmanız önerilir, çünkü esk
 
 # Flutter installation
 flutter_application_path = File.expand_path('..', __FILE__)  # Bu yolu doğru bir şekilde ayarladık
-load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
+load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')  # Doğru yolu belirledik
 
 target 'Runner' do
   use_frameworks!
   use_modular_headers!
   
   # Pods for Runner
-  pod 'Firebase/Core', '~> 7.11.0'
+  pod 'Firebase/Core', '~> 7.11.0'  # Firebase bağımlılığı
 
   # Flutter specific pods
-  install_flutter_dependencies
+  install_flutter_dependencies  # Flutter bağımlılıklarını yükler
 end
