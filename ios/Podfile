@@ -2,7 +2,7 @@ platform :ios, '15.0'  # '15.5' yerine 15.0 kullanmanız önerilir, çünkü esk
 
 # Flutter installation
 flutter_application_path = File.expand_path('..', __FILE__)  # Bu yolu doğru bir şekilde ayarladık
-load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')  # Doğru yolu belirledik
+# load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')  # Doğru yolu belirledik
 
 target 'Runner' do
   use_frameworks!
