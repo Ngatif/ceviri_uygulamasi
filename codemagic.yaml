@@ -8,11 +8,11 @@ workflows:
     scripts:
       - name: Get Flutter dependencies
         script: flutter pub get
-      - name: Build iPA for distribution
+      - name: Build IPA for distribution
         script: flutter build ipa --release
     artifacts:
       - build/ios/ipa/*.ipa
     publishing:
       email:
         recipients:
-          - [serrdar.sd@gmail.com]
+          - "serrdar.sd@gmail.com"
