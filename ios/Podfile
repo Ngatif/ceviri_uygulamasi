@@ -1,0 +1,16 @@
+platform :ios, '15.5'
+
+# Flutter installation
+flutter_application_path = '../..'
+load File.join(flutter_application_path, 'packages', 'flutter_tools', 'bin', 'podhelper.rb')
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+  
+  # Pods for Runner
+  pod 'Firebase/Core', '~> 7.11.0'
+
+  # Flutter specific pods
+  install_flutter_dependencies
+end
